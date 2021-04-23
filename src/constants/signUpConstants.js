@@ -1,0 +1,3 @@
+export const SET_IS_ERROR = "SET_IS_ERROR";
+export const SET_IS_REGISTERED = "SET_IS_REGISTERED";
+export const SET_ERROR_MESSAGES = "SET_ERROR_MESSAGES";

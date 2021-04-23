@@ -1,0 +1,14 @@
+export const SET_PROFILE = "SET_PROFILE";
+export const SET_PROFILE_IS_FETCHING = "SET_PROFILE_IS_FETCHING";
+export const SET_TOTAL_TASK_COUNT = "SET_TOTAL_TASK_COUNT";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
+export const SET_PAGE_SIZE = "SET_PAGE_SIZE";
+export const UPDATE_PROFILE = "UPDATE_PROFILE";
+export const SET_TASKS = "SET_TASKS";
+export const CLEAR_TASKS = "CLEAR_TASKS";
+export const ADD_TASK = "ADD_TASK";
+export const DELETE_TASK = "DELETE_TASK";
+export const UPDATE_TASK = "UPDATE_TASK";
+export const SET_ACTIVE_TASK = "SET_ACTIVE_TASK";
+export const SET_COMPLETED_TASK = "SET_COMPLETED_TASK";
+export const SET_FAILED_TASK = "SET_FAILED_TASK";
