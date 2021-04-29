@@ -17,7 +17,7 @@ const EditTask = ({ task, open, handleClose, updateTask }) => {
   let [description, setDescription] = useState(task.description);
   let [startDate, setStartDate] = useState(task.startDate);
   let [endDate, setEndDate] = useState(task.endDate);
-  let [status, setStatus] = useState(task.status);
+  let [status] = useState(task.status);
 
   const onChangeTitle = (e) => {
     setTiltle(e.currentTarget.value);

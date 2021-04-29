@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import { compose } from "redux";
