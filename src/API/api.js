@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 
 const instance = axios.create({
   //baseURL: "http://localhost/todos/api/v1/", // when API deploy to tomcat server
@@ -215,16 +215,28 @@ export const AdminAPI = {
   async getUsers(currentPage, size) {
     try {
       const response = await instance.get(
-          `admin/users?page=${currentPage}&size=${size}`,
-          {
-            headers: {
-              Authorization: localStorage.getItem("token"),
-            },
-          }
+        `admin/users?page=${currentPage}&size=${size}`,
+        {
+          headers: {
+            Authorization: localStorage.getItem("token"),
+          },
+        }
       );
       return response.data;
     } catch (err) {
       return { resultCode: 1 };
     }
   },
-}
+  async getReports() {
+    try {
+      const response = await instance.get("admin/reports", {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+      return response.data;
+    } catch (err) {
+      return { resultCode: 1 };
+    }
+  },
+};

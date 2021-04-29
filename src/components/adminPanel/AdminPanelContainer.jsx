@@ -5,7 +5,6 @@ import {getUsers} from "../../thunks/adminPanelThunks";
 
 const AdminPanelContainer = (props) => {
   props.getUsers(props.currentPage, props.pageSize);
-
   return <AdminPanel />;
 };
 

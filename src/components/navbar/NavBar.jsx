@@ -12,6 +12,7 @@ import GroupOutlinedIcon from "@material-ui/icons/GroupOutlined";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 
 const NavBar = (props) => {
+
   let classes = NavBarStyles();
 
   return (
