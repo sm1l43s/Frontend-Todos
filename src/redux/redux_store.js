@@ -5,12 +5,14 @@ import commonReducer from "./commonReducer";
 import signUpReducer from "./signUpReducer";
 import usersReducer from "./usersReducer";
 import profileReducer from "./profileReducer";
+import adminPanelReducer from "./adminPanelReducer";
 
 let reducer = combineReducers({
   auth: authReducer,
   signUp: signUpReducer,
   users: usersReducer,
   profile: profileReducer,
+  admin: adminPanelReducer,
   commonElements: commonReducer,
 });
 

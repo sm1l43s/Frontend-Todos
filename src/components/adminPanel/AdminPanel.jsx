@@ -62,7 +62,9 @@ const AdminPanel = (props) => {
           </Grid>
         </Grid>
         <Grid xs={12} md={12} item>
-          2
+          <Paper>
+            2
+          </Paper>
         </Grid>
       </Grid>
     </Container>

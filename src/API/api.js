@@ -210,3 +210,21 @@ export const TaskAPI = {
     }
   },
 };
+
+export const AdminAPI = {
+  async getUsers(currentPage, size) {
+    try {
+      const response = await instance.get(
+          `admin/users?page=${currentPage}&size=${size}`,
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
+          }
+      );
+      return response.data;
+    } catch (err) {
+      return { resultCode: 1 };
+    }
+  },
+}
