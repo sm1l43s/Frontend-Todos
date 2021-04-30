@@ -97,6 +97,18 @@ export const calculateCountItemsByCriteria = (
   return count;
 };
 
+export const getItemsByCriteria = (
+    items,
+    objPropsName,
+    criteria
+) => {
+  for (let i = 0; i < items.length; i++) {
+    if (items[i][objPropsName] == criteria) {
+      return items[i];
+    }
+  }
+};
+
 export const setNotification = (
   dispatch,
   isNotification,

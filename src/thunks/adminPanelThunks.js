@@ -1,7 +1,11 @@
 import * as severity from "../constants/severityTypeConstants";
 import { setNotification } from "../utils/utils";
 import { AdminAPI } from "../API/api";
-import {setReports, setTotalCountUsers, setUsers} from "../actions/adminPanelAction";
+import {
+  setReports,
+  setTotalCountUsers,
+  setUsers,
+} from "../actions/adminPanelAction";
 
 export const getUsers = (currentPage, pageSize) => async (dispatch) => {
   let response = await AdminAPI.getUsers(currentPage, pageSize);
@@ -26,10 +30,10 @@ export const getReports = () => async (dispatch) => {
     dispatch(setReports(response.data));
   } else {
     setNotification(
-        dispatch,
-        true,
-        "Oops, something happened. Operation failed!",
-        severity.ERROR
+      dispatch,
+      true,
+      "Oops, something happened. Operation failed!",
+      severity.ERROR
     );
   }
-}
+};

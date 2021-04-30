@@ -12,7 +12,7 @@ let reducer = combineReducers({
   signUp: signUpReducer,
   users: usersReducer,
   profile: profileReducer,
-  admin: adminPanelReducer,
+  adminPanel: adminPanelReducer,
   commonElements: commonReducer,
 });
 

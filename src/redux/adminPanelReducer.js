@@ -1,21 +1,26 @@
 import {
-  SET_CURRENT_PAGE,
-  SET_PAGE_SIZE, SET_REPORTS,
+  SET_CURRENT_PAGE, SET_EDIT_USER_ID, SET_IS_MENU,
+  SET_PAGE_SIZE,
+  SET_REPORTS,
   SET_TOTAL_COUNT_USERS,
   SET_USERS,
 } from "../constants/adminPanelConstants";
+import {getItemsByCriteria} from "../utils/utils";
 
 let initState = {
+  totalCountUsers: 0,
+  pageSize: 5,
+  currentPage: 1,
   users: [],
   reports: {
+    totalTask: 0,
     totalUsers: 0,
     newUsers: 0,
-    totalTask: 0,
-    completedTask: 0,
+    totalActiveTask: 0,
+    totalCompletedTask: 0,
+    totalDeletedTask: 0,
   },
-  totalCountUsers: 0,
-  currentPage: 1,
-  pageSize: 10,
+  editUser: null,
 };
 
 const adminPanelReducer = (state = initState, action) => {
@@ -52,6 +57,13 @@ const adminPanelReducer = (state = initState, action) => {
       return {
         ...state,
         reports: action.reports,
+      };
+    }
+
+    case SET_EDIT_USER_ID: {
+      return {
+        ...state,
+        editUser: getItemsByCriteria(state.users, "id", action.id),
       }
     }
 

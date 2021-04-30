@@ -3,3 +3,4 @@ export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 export const SET_PAGE_SIZE = "SET_PAGE_SIZE";
 export const SET_TOTAL_COUNT_USERS = "SET_TOTAL_COUNT_USERS";
 export const SET_REPORTS = "SET_REPORTS";
+export const SET_EDIT_USER_ID = "SET_EDIT_USER_ID";
