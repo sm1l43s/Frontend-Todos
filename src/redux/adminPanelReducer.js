@@ -20,7 +20,7 @@ let initState = {
     totalCompletedTask: 0,
     totalDeletedTask: 0,
   },
-  editUser: null,
+  editUser: {},
 };
 
 const adminPanelReducer = (state = initState, action) => {
