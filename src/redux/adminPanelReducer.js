@@ -1,5 +1,5 @@
 import {
-  SET_CURRENT_PAGE, SET_EDIT_USER_ID, SET_IS_MENU,
+  SET_CURRENT_PAGE, SET_EDIT_USER, SET_IS_MENU,
   SET_PAGE_SIZE,
   SET_REPORTS,
   SET_TOTAL_COUNT_USERS,
@@ -60,7 +60,7 @@ const adminPanelReducer = (state = initState, action) => {
       };
     }
 
-    case SET_EDIT_USER_ID: {
+    case SET_EDIT_USER: {
       return {
         ...state,
         editUser: getItemsByCriteria(state.users, "id", action.id),

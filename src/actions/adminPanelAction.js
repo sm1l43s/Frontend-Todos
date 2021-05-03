@@ -1,5 +1,5 @@
 import {
-  SET_CURRENT_PAGE, SET_EDIT_USER_ID, SET_IS_MENU,
+  SET_CURRENT_PAGE, SET_EDIT_USER, SET_IS_MENU,
   SET_PAGE_SIZE,
   SET_REPORTS,
   SET_TOTAL_COUNT_USERS,
@@ -18,4 +18,4 @@ export const setTotalCountUsers = (totalCountUsers) => ({
 });
 export const setReports = (reports) => ({ type: SET_REPORTS, reports });
 
-export const setEditUserId = (id) => ({type: SET_EDIT_USER_ID, id});
+export const setEditUser = (id) => ({type: SET_EDIT_USER, id});

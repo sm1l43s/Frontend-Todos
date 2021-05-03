@@ -95,7 +95,7 @@ export const SignIn = (props) => {
 
               <Box mt={2}>
                 <NavLink to="/signup">
-                  <Typography variant="h7">
+                  <Typography variant="subtitle1">
                     Don't have an account? Sign Up
                   </Typography>
                 </NavLink>

@@ -21,9 +21,11 @@ const EditProfile = ({ profile, open, handleClose, updateProfile }) => {
   let onChangeFirstName = (e) => {
     setFirstName(e.target.value);
   };
+
   let onChangeLastName = (e) => {
     setLastName(e.target.value);
   };
+
   let onChangeEmail = (e) => {
     setEmail(e.target.value);
   };

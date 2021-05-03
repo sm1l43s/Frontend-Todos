@@ -1,6 +1,6 @@
+import React, {useEffect, useState} from "react";
 import {Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import React, {useState} from "react";
 import Grid from "@material-ui/core/Grid";
 import FormLabel from "@material-ui/core/FormLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -14,13 +14,14 @@ const onSubmit = () => {
 
 const EditUsersData = ({open, handleClose, user}) => {
 
-    const [firstName, setFirstName] = useState(user.firstName);
-    const [lastName, setLastName] = useState(user.lastName);
-    const [email, setEmail] = useState(user.email);
-    const [status, setStatus] = useState(user.status);
-    const [checkedAdmin, setCheckedAdmin] = useState(true);
-    const [checkedUser, setCheckedUser] = useState(false);
-
+    let [firstName, setFirstName] = useState(user.firstName);
+    let [lastName, setLastName] = useState(user.lastName);
+    let [email, setEmail] = useState(user.email);
+    let [status, setStatus] = useState(user.status);
+    
+    let [checkedAdmin, setCheckedAdmin] = useState(true);
+    let [checkedUser, setCheckedUser] = useState(false);
+    console.log(firstName, lastName, email, status);
     let onChangeFirstName = (e) => {
         setFirstName(e.target.value);
     };

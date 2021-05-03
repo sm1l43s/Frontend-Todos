@@ -14,7 +14,7 @@ const AdminPanel = ({
   users,
   totalCountUsers,
   setCurrentPage,
-    setEditUserId,
+    setEditUser,
 }) => {
   let classes = AdminPanelStyles();
 
@@ -32,7 +32,7 @@ const AdminPanel = ({
     <Container maxWidth="lg" className={classes.container}>
       <Grid container direction="column">
         <Grid xs={12} md={12} item>
-          <UsersTable users={users} setEditUserId={setEditUserId} />
+          <UsersTable users={users} setEditUser={setEditUser} />
         </Grid>
       </Grid>
       <Grid item>

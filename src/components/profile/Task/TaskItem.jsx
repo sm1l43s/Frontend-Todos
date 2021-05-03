@@ -93,7 +93,7 @@ const TaskItem = ({
           )}
           <Grid item xs={10} sm={10}>
             <Typography color="textSecondary">
-              <Grid direction="row" container justify="space-betwen">
+              <Grid direction="row" container justify="space-between">
                 <Grid item xs={8} sm={8}>
                   {task.description}
                 </Grid>

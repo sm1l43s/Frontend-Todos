@@ -113,7 +113,7 @@ const ProfileInfo = ({
             </Grid>
             <Grid item>{profile.aboutMe || "No description"}</Grid>
           </Grid>
-          <Typography variant="span" color="textSecondary">
+          <Typography variant="subtitle2" color="textSecondary">
             <Grid container direction="row" alignItems="center">
               <Grid item>
                 <BusinessCenterOutlinedIcon className={classes.smallIcon} />
@@ -124,7 +124,7 @@ const ProfileInfo = ({
               </Grid>
             </Grid>
           </Typography>
-          <Typography variant="span" color="textSecondary">
+          <Typography variant="subtitle2" color="textSecondary">
             <Grid container direction="row" alignItems="center">
               <Grid item>
                 <Chip
@@ -139,7 +139,7 @@ const ProfileInfo = ({
               </Grid>
             </Grid>
           </Typography>
-          <Typography variant="span" color="textSecondary">
+          <Typography variant="subtitle2" color="textSecondary">
             <Grid container direction="row" alignItems="center">
               <Grid item>
                 <div className={classes.spacing}>
@@ -147,7 +147,6 @@ const ProfileInfo = ({
                     size="small"
                     label={`${profile.failedTask} failed task`}
                     onDelete={() => {}}
-                    deleteIcon={() => {}}
                     variant="outlined"
                     color="secondary"
                   />

@@ -53,7 +53,7 @@ const Tasks = (props) => {
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Card md={6} xs={6} className={classes.root}>
+      <Card md={6} className={classes.root}>
         <CardHeader
           title={`Task list`}
           titleTypographyProps={{ align: "center" }}
@@ -67,14 +67,14 @@ const Tasks = (props) => {
           className={classes.cardHeader}
         />
         <CardContent>
-          <Grid container direction="row" justify="space-between" xs={12}>
+          <Grid container direction="row" justify="space-between">
             <Grid item xs={12}>
               {tasksElement}
             </Grid>
           </Grid>
         </CardContent>
         <CardActions>
-          <Grid container direction="row" justify="center" xs={12}>
+          <Grid container direction="row" justify="center">
             <Grid item>
               <Pagination
                 className={classes.center}

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -11,8 +11,6 @@ import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import TableCell from "@material-ui/core/TableCell";
 import {withStyles} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
-import EditUsersData from "./EditUsersData";
-import {setEditUserId} from "../../actions/adminPanelAction";
 import EditUsersDataContainer from "./EditUsersDataContainer";
 
 function createData(ordinal, user, roles) {
@@ -37,7 +35,7 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const UsersTable = ({ users, setEditUserId }) => {
+const UsersTable = ({ users, setEditUser }) => {
   let rows = [];
 
   for (let i = 0; i < users.length; i++) {
@@ -57,7 +55,7 @@ const UsersTable = ({ users, setEditUserId }) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = (event) => {
-    setEditUserId(event.currentTarget.value);
+    setEditUser(event.currentTarget.value);
     setOpen(true);
   };
 
