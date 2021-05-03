@@ -1,9 +1,12 @@
 import {
-  SET_CURRENT_PAGE, SET_EDIT_USER, SET_IS_UPDATED,
+  SET_CURRENT_PAGE,
+  SET_EDIT_USER,
+  SET_IS_UPDATED,
   SET_PAGE_SIZE,
   SET_REPORTS,
   SET_TOTAL_COUNT_USERS,
-  SET_USERS, UPDATE_USERS,
+  SET_USERS,
+  UPDATE_USERS,
 } from "../constants/adminPanelConstants";
 
 export const setUsers = (users) => ({ type: SET_USERS, users });
@@ -17,9 +20,12 @@ export const setTotalCountUsers = (totalCountUsers) => ({
   totalCountUsers,
 });
 
-export const setIsUpdated = (isUpdated) => ({type: SET_IS_UPDATED, isUpdated});
+export const setIsUpdated = (isUpdated) => ({
+  type: SET_IS_UPDATED,
+  isUpdated,
+});
 export const setReports = (reports) => ({ type: SET_REPORTS, reports });
 
-export const setEditUser = (id) => ({type: SET_EDIT_USER, id});
+export const setEditUser = (id) => ({ type: SET_EDIT_USER, id });
 
-export const setUpdatedUSer = (user) =>({type: UPDATE_USERS, user});
+export const setUpdatedUSer = (user) => ({ type: UPDATE_USERS, user });

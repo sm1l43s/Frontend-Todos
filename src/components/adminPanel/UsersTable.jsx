@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import TableCell from "@material-ui/core/TableCell";
-import {withStyles} from "@material-ui/core";
+import { withStyles } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import EditUsersDataContainer from "./EditUsersDataContainer";
 
@@ -44,11 +44,7 @@ const UsersTable = ({ users, setEditUser }) => {
     if (users[i].roles.length > 1) {
       roles = users[i].roles[0].name + ", " + users[i].roles[1].name;
     }
-    let item = createData(
-      i + 1,
-      users[i],
-      roles.toLowerCase()
-    );
+    let item = createData(i + 1, users[i], roles.toLowerCase());
     rows = [...rows, item];
   }
 
@@ -65,7 +61,7 @@ const UsersTable = ({ users, setEditUser }) => {
 
   return (
     <TableContainer component={Paper}>
-      <EditUsersDataContainer open={open} handleClose={handleClose}/>
+      <EditUsersDataContainer open={open} handleClose={handleClose} />
       <Table size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
@@ -84,8 +80,12 @@ const UsersTable = ({ users, setEditUser }) => {
               <StyledTableCell component="th" scope="row">
                 {row.ordinal}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.user.lastName}</StyledTableCell>
-              <StyledTableCell align="right">{row.user.firstName}</StyledTableCell>
+              <StyledTableCell align="right">
+                {row.user.lastName}
+              </StyledTableCell>
+              <StyledTableCell align="right">
+                {row.user.firstName}
+              </StyledTableCell>
               <StyledTableCell align="right">{row.user.email}</StyledTableCell>
               <StyledTableCell align="right">{row.user.status}</StyledTableCell>
               <StyledTableCell align="right">{row.roles}</StyledTableCell>
@@ -93,7 +93,12 @@ const UsersTable = ({ users, setEditUser }) => {
                 <NavLink to={"/dashboard/profile/" + row.user.id}>
                   <InfoOutlinedIcon />
                 </NavLink>
-                <IconButton aria-label="edit" onClick={ handleClickOpen } value={row.user.id} fontSize="small">
+                <IconButton
+                  aria-label="edit"
+                  onClick={handleClickOpen}
+                  value={row.user.id}
+                  fontSize="small"
+                >
                   <EditOutlinedIcon />
                 </IconButton>
               </StyledTableCell>

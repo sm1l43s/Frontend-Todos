@@ -4,7 +4,8 @@ import { AdminAPI } from "../API/api";
 import {
   setIsUpdated,
   setReports,
-  setTotalCountUsers, setUpdatedUSer,
+  setTotalCountUsers,
+  setUpdatedUSer,
   setUsers,
 } from "../actions/adminPanelAction";
 
@@ -37,13 +38,13 @@ export const updateUsers = (user, isUpdated) => async (dispatch) => {
     );
   } else {
     setNotification(
-        dispatch,
-        true,
-        "Oops, something happened. Operation failed!",
-        severity.ERROR
+      dispatch,
+      true,
+      "Oops, something happened. Operation failed!",
+      severity.ERROR
     );
   }
-}
+};
 
 export const getReports = () => async (dispatch) => {
   let response = await AdminAPI.getReports();

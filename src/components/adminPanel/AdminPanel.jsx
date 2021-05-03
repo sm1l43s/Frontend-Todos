@@ -1,4 +1,4 @@
-import {Container} from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import React from "react";
 import AdminPanelStyles from "./styles/AdminPanelStyles";
 import Grid from "@material-ui/core/Grid";
@@ -12,7 +12,7 @@ const AdminPanel = ({
   users,
   totalCountUsers,
   setCurrentPage,
-    setEditUser,
+  setEditUser,
 }) => {
   let classes = AdminPanelStyles();
   let onChangeCurrentPage = (e, value) => {
@@ -41,7 +41,6 @@ const AdminPanel = ({
           onChange={onChangeCurrentPage}
         />
       </Grid>
-
     </Container>
   );
 };

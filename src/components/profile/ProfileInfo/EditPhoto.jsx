@@ -38,18 +38,27 @@ const EditPhoto = ({ handleClose, open, updateProfilePhoto }) => {
             render={({ handleSubmit, form, submitting, pristine, values }) => (
               <form className={classes.form} onSubmit={handleSubmit}>
                 <div>
-                    <label>
-                        <input type="file" onChange={onChange} className={classes.input} accept="image/jpeg,image/png,image/gif"/>
-                        <Button variant="outlined" fullWidth color="primary" component="span">
-                            {!file ? "Upload" : file.name}
-                        </Button>
-                    </label>
+                  <label>
+                    <input
+                      type="file"
+                      onChange={onChange}
+                      className={classes.input}
+                      accept="image/jpeg,image/png,image/gif"
+                    />
+                    <Button
+                      variant="outlined"
+                      fullWidth
+                      color="primary"
+                      component="span"
+                    >
+                      {!file ? "Upload" : file.name}
+                    </Button>
+                  </label>
                 </div>
                 <Button
                   type="submit"
                   variant="contained"
                   color="primary"
-
                   className={classes.submit}
                 >
                   Edit

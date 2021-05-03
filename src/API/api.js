@@ -229,15 +229,14 @@ export const AdminAPI = {
   },
   async updateUser(user) {
     try {
-      const  response = await instance.put(`admin/users`,user, {
+      const response = await instance.put(`admin/users`, user, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
-      }
-      );
+      });
       return response.data;
     } catch (err) {
-      return {resultCode: 1};
+      return { resultCode: 1 };
     }
   },
   async getReports() {

@@ -2,7 +2,11 @@ import React, { useEffect } from "react";
 import AdminPanel from "./AdminPanel";
 import { connect } from "react-redux";
 import { getReports, getUsers } from "../../thunks/adminPanelThunks";
-import {setCurrentPage, setEditUser, setIsUpdated} from "../../actions/adminPanelAction";
+import {
+  setCurrentPage,
+  setEditUser,
+  setIsUpdated,
+} from "../../actions/adminPanelAction";
 
 const AdminPanelContainer = ({
   currentPage,
@@ -15,7 +19,7 @@ const AdminPanelContainer = ({
   totalCountUsers,
   setEditUser,
   isUpdated,
-    setIsUpdated,
+  setIsUpdated,
 }) => {
   useEffect(() => {
     getUsers(currentPage, pageSize);
@@ -43,6 +47,10 @@ let mstp = (state) => ({
   isUpdated: state.adminPanel.isUpdated,
 });
 
-export default connect(mstp, { getUsers, getReports, setCurrentPage, setEditUser, setIsUpdated })(
-  AdminPanelContainer
-);
+export default connect(mstp, {
+  getUsers,
+  getReports,
+  setCurrentPage,
+  setEditUser,
+  setIsUpdated,
+})(AdminPanelContainer);

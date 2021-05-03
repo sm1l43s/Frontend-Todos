@@ -8,36 +8,35 @@ import Drawer from "@material-ui/core/Drawer";
 import React from "react";
 import NavBarWrapperStyles from "./styles/NavBarWrapperStyles";
 
-const NavBarWrapper = ({isMenuOpen, setIsMenuOpen}) => {
+const NavBarWrapper = ({ isMenuOpen, setIsMenuOpen }) => {
+  const classes = NavBarWrapperStyles();
 
-    const classes = NavBarWrapperStyles();
+  const handleDrawerClose = () => {
+    setIsMenuOpen(false);
+  };
 
-    const handleDrawerClose = () => {
-        setIsMenuOpen(false);
-    };
-
-    return (
-        <Drawer
-            variant="permanent"
-            classes={{
-                paper: clsx(
-                    classes.drawerPaper,
-                    !isMenuOpen && classes.drawerPaperClose
-                ),
-            }}
-            open={isMenuOpen}
-        >
-            <div className={classes.toolbarIcon}>
-                <IconButton onClick={handleDrawerClose}>
-                    <ChevronLeftIcon/>
-                </IconButton>
-            </div>
-            <Divider/>
-            <List>
-                <NavBar/>
-            </List>
-        </Drawer>
-    );
-}
+  return (
+    <Drawer
+      variant="permanent"
+      classes={{
+        paper: clsx(
+          classes.drawerPaper,
+          !isMenuOpen && classes.drawerPaperClose
+        ),
+      }}
+      open={isMenuOpen}
+    >
+      <div className={classes.toolbarIcon}>
+        <IconButton onClick={handleDrawerClose}>
+          <ChevronLeftIcon />
+        </IconButton>
+      </div>
+      <Divider />
+      <List>
+        <NavBar />
+      </List>
+    </Drawer>
+  );
+};
 
 export default NavBarWrapper;

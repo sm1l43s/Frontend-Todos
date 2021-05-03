@@ -12,7 +12,6 @@ import { NavLink, Redirect } from "react-router-dom";
 import Preloader from "../common/Preloader/Preloader";
 import SignInStyles from "./styles/SignInStyles";
 
-
 export const SignIn = (props) => {
   const classes = SignInStyles();
 

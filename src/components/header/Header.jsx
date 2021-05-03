@@ -7,9 +7,7 @@ import AppBar from "@material-ui/core/AppBar";
 import React from "react";
 import HeaderStyles from "./styles/HeaderStyles";
 
-
 const Header = ({ isMenuOpen, setIsMenuOpen }) => {
-
   const classes = HeaderStyles();
 
   const handleDrawerOpen = () => {
