@@ -1,11 +1,9 @@
-import {Container, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@material-ui/core";
-import React, {useState} from "react";
+import {Container} from "@material-ui/core";
+import React from "react";
 import AdminPanelStyles from "./styles/AdminPanelStyles";
 import Grid from "@material-ui/core/Grid";
 import UsersTable from "./UsersTable";
 import { Pagination } from "@material-ui/lab";
-import Button from "@material-ui/core/Button";
-import EditUsersData from "./EditUsersData";
 
 const AdminPanel = ({
   currentPage,
@@ -17,7 +15,6 @@ const AdminPanel = ({
     setEditUser,
 }) => {
   let classes = AdminPanelStyles();
-
   let onChangeCurrentPage = (e, value) => {
     setCurrentPage(value);
   };

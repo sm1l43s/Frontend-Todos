@@ -109,6 +109,23 @@ export const getItemsByCriteria = (
   }
 };
 
+export const updateDataObject = (items, objPropName, criteria, newItem) => {
+  console.log(items);
+
+  let found = items.find((obj) => {
+    return obj.id == criteria;
+  });
+
+  found.lastName = newItem.lastName;
+  found.firstName = newItem.firstName;
+  found.email = newItem.email;
+  found.status = newItem.status;
+  found.roles = newItem.roles;
+
+  console.log(items);
+  return items;
+}
+
 export const setNotification = (
   dispatch,
   isNotification,

@@ -1,11 +1,11 @@
 import {
-  SET_CURRENT_PAGE, SET_EDIT_USER, SET_IS_MENU,
+  SET_CURRENT_PAGE, SET_EDIT_USER, SET_IS_UPDATED,
   SET_PAGE_SIZE,
   SET_REPORTS,
   SET_TOTAL_COUNT_USERS,
-  SET_USERS,
+  SET_USERS, UPDATE_USERS,
 } from "../constants/adminPanelConstants";
-import {getItemsByCriteria} from "../utils/utils";
+import {getItemsByCriteria, updateDataObject} from "../utils/utils";
 
 let initState = {
   totalCountUsers: 0,
@@ -21,6 +21,7 @@ let initState = {
     totalDeletedTask: 0,
   },
   editUser: {},
+  isUpdated: false,
 };
 
 const adminPanelReducer = (state = initState, action) => {
@@ -64,6 +65,20 @@ const adminPanelReducer = (state = initState, action) => {
       return {
         ...state,
         editUser: getItemsByCriteria(state.users, "id", action.id),
+      }
+    }
+
+    case UPDATE_USERS: {
+      return {
+        ...state,
+        users: updateDataObject(state.users, "id", action.user.id, action.user),
+      }
+    }
+
+    case SET_IS_UPDATED: {
+      return {
+        ...state,
+        isUpdated: action.isUpdated,
       }
     }
 

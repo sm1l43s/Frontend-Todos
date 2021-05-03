@@ -9,19 +9,24 @@ import Radio from "@material-ui/core/Radio";
 import FormControl from "@material-ui/core/FormControl";
 import Checkbox from "@material-ui/core/Checkbox";
 
-const onSubmit = () => {
-};
+const EditUsersData = ({open, handleClose, user, updateUsers, isUpdated}) => {
 
-const EditUsersData = ({open, handleClose, user}) => {
-
-    let [firstName, setFirstName] = useState(user.firstName);
+    let [firstName, setFirstName] = React.useState(user.firstName);
     let [lastName, setLastName] = useState(user.lastName);
     let [email, setEmail] = useState(user.email);
     let [status, setStatus] = useState(user.status);
-    
-    let [checkedAdmin, setCheckedAdmin] = useState(true);
-    let [checkedUser, setCheckedUser] = useState(false);
-    console.log(firstName, lastName, email, status);
+    let [roles, setRoles] = useState(user.roles);
+    let [checkedUser, setCheckedUser] = useState(true);
+    let [checkedAdmin, setCheckedAdmin] = useState(false);
+
+    useEffect(()=>{
+        setFirstName(user.firstName);
+        setLastName(user.lastName);
+        setEmail(user.email);
+        setStatus(user.status);
+        setRoles(user.roles);
+    }, [user]);
+
     let onChangeFirstName = (e) => {
         setFirstName(e.target.value);
     };
@@ -35,7 +40,7 @@ const EditUsersData = ({open, handleClose, user}) => {
     };
 
     let onChangeStatus = (e) => {
-        setStatus(e.target.value)
+        setStatus(e.target.value);
     }
 
     let handleChangeCheckedAdmin = (e) => {
@@ -45,6 +50,28 @@ const EditUsersData = ({open, handleClose, user}) => {
     let handleChangeCheckedUser = (e) => {
         setCheckedUser(e.target.checked);
     }
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        let roleUser = [{name: "ROLE_USER"}];
+        // if (checkedUser) {
+        //     roleUser.push({name: "ROLE_USER"});
+        // }
+        //
+        // if (checkedAdmin) {
+        //     roleUser.push({name: "ROLE_ADMIN"});
+        // }
+
+        let user = {
+            email,
+            firstName,
+            lastName,
+            status,
+            roles: [...roleUser],
+        }
+        updateUsers(user, isUpdated);
+        handleClose();
+    };
 
     return (
         <div>
@@ -130,6 +157,7 @@ const EditUsersData = ({open, handleClose, user}) => {
                                                 onChange={handleChangeCheckedAdmin}
                                                 name="ROLE_ADMIN"
                                                 color="primary"
+                                                disabled={true}
                                             />
                                         }
                                         label="role_admin"
@@ -141,6 +169,7 @@ const EditUsersData = ({open, handleClose, user}) => {
                                                 onChange={handleChangeCheckedUser}
                                                 name="ROLE_ADMIN"
                                                 color="primary"
+                                                disabled={true}
                                             />
                                         }
                                         label="role_user"

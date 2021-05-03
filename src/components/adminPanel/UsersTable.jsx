@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -65,7 +65,7 @@ const UsersTable = ({ users, setEditUser }) => {
 
   return (
     <TableContainer component={Paper}>
-      <EditUsersDataContainer open={open} handleClose={handleClose} />
+      <EditUsersDataContainer open={open} handleClose={handleClose}/>
       <Table size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>

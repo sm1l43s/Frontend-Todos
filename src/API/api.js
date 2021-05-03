@@ -227,6 +227,19 @@ export const AdminAPI = {
       return { resultCode: 1 };
     }
   },
+  async updateUser(user) {
+    try {
+      const  response = await instance.put(`admin/users`,user, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      }
+      );
+      return response.data;
+    } catch (err) {
+      return {resultCode: 1};
+    }
+  },
   async getReports() {
     try {
       const response = await instance.get("admin/reports", {
