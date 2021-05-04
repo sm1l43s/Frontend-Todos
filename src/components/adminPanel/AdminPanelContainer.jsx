@@ -7,6 +7,8 @@ import {
   setEditUser,
   setIsUpdated,
 } from "../../actions/adminPanelAction";
+import { compose } from "redux";
+import { withRoleAdminRedirectComponent } from "../../HOC/withRoleAdminRedirectComponent";
 
 const AdminPanelContainer = ({
   currentPage,
@@ -19,12 +21,23 @@ const AdminPanelContainer = ({
   totalCountUsers,
   setEditUser,
   isUpdated,
-  setIsUpdated,
+  searchWord,
+  orderType,
+  orderFields,
 }) => {
   useEffect(() => {
-    getUsers(currentPage, pageSize);
+    getUsers(currentPage, pageSize, orderType, orderFields, searchWord);
     getReports();
-  }, [currentPage, pageSize, getUsers, getReports, isUpdated]);
+  }, [
+    currentPage,
+    pageSize,
+    getUsers,
+    getReports,
+    isUpdated,
+    orderType,
+    orderFields,
+    searchWord,
+  ]);
 
   return (
     <AdminPanel
@@ -45,12 +58,18 @@ let mstp = (state) => ({
   users: state.adminPanel.users,
   totalCountUsers: state.adminPanel.totalCountUsers,
   isUpdated: state.adminPanel.isUpdated,
+  searchWord: state.adminPanel.searchWord,
+  orderType: state.adminPanel.orderType,
+  orderFields: state.adminPanel.orderFields,
 });
 
-export default connect(mstp, {
-  getUsers,
-  getReports,
-  setCurrentPage,
-  setEditUser,
-  setIsUpdated,
-})(AdminPanelContainer);
+export default compose(
+  withRoleAdminRedirectComponent,
+  connect(mstp, {
+    getUsers,
+    getReports,
+    setCurrentPage,
+    setEditUser,
+    setIsUpdated,
+  })
+)(AdminPanelContainer);

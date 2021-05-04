@@ -3,7 +3,6 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import BarChartIcon from "@material-ui/icons/BarChart";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import { NavLink } from "react-router-dom";
 import NavBarStyles from "./styles/NavBarStyles";
@@ -11,7 +10,7 @@ import AccountBoxOutlinedIcon from "@material-ui/icons/AccountBoxOutlined";
 import GroupOutlinedIcon from "@material-ui/icons/GroupOutlined";
 import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
 
-const NavBar = (props) => {
+const NavBar = ({ roles }) => {
   let classes = NavBarStyles();
 
   return (
@@ -32,22 +31,16 @@ const NavBar = (props) => {
           <ListItemText primary="Users" />
         </ListItem>
       </NavLink>
-      <NavLink to="/dashboard/reports" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <BarChartIcon />
-          </ListItemIcon>
-          <ListItemText primary="Reports" />
-        </ListItem>
-      </NavLink>
-      <NavLink to="/dashboard/admin" className={classes.link}>
-        <ListItem button>
-          <ListItemIcon>
-            <DashboardOutlinedIcon />
-          </ListItemIcon>
-          <ListItemText primary="Admin panel" />
-        </ListItem>
-      </NavLink>
+      {roles.length > 1 && (
+        <NavLink to="/dashboard/admin" className={classes.link}>
+          <ListItem button>
+            <ListItemIcon>
+              <DashboardOutlinedIcon />
+            </ListItemIcon>
+            <ListItemText primary="Admin panel" />
+          </ListItem>
+        </NavLink>
+      )}
     </div>
   );
 };

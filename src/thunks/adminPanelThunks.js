@@ -9,8 +9,20 @@ import {
   setUsers,
 } from "../actions/adminPanelAction";
 
-export const getUsers = (currentPage, pageSize) => async (dispatch) => {
-  let response = await AdminAPI.getUsers(currentPage, pageSize);
+export const getUsers = (
+  currentPage,
+  pageSize,
+  typeOrder,
+  orderFields,
+  searchWord
+) => async (dispatch) => {
+  let response = await AdminAPI.getUsers(
+    currentPage,
+    pageSize,
+    typeOrder,
+    orderFields,
+    searchWord
+  );
 
   if (response.resultCode === 0) {
     dispatch(setUsers(response.data));

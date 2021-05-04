@@ -8,7 +8,7 @@ import Drawer from "@material-ui/core/Drawer";
 import React from "react";
 import NavBarWrapperStyles from "./styles/NavBarWrapperStyles";
 
-const NavBarWrapper = ({ isMenuOpen, setIsMenuOpen }) => {
+const NavBarWrapper = ({ isMenuOpen, setIsMenuOpen, roles }) => {
   const classes = NavBarWrapperStyles();
 
   const handleDrawerClose = () => {
@@ -33,7 +33,7 @@ const NavBarWrapper = ({ isMenuOpen, setIsMenuOpen }) => {
       </div>
       <Divider />
       <List>
-        <NavBar />
+        <NavBar roles={roles} />
       </List>
     </Drawer>
   );

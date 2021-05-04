@@ -25,7 +25,7 @@ export const arrayBufferToBase64 = (buffer) => {
 export const getNormalDate = (date) => {
   let d = new Date(date);
   let validDate =
-    getTextMonth(d.getMonth()) +
+    getTextMonth(d.getMonth() + 1) +
     " " +
     checkDate(d.getDate()) +
     ", " +

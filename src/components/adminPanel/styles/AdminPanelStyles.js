@@ -8,7 +8,6 @@ const AdminPanelStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
   },
-
   largeIcon: {
     fontSize: "48px",
   },

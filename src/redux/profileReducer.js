@@ -17,7 +17,9 @@ import {
 import { calculateCountItemsByCriteria } from "../utils/utils";
 
 let initState = {
-  profile: null,
+  profile: {
+    roles: [{name: "ROLE_USER"}]
+  },
   tasks: [],
   totalTaskCount: 0,
   activeTask: 0,

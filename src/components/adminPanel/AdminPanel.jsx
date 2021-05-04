@@ -4,6 +4,7 @@ import AdminPanelStyles from "./styles/AdminPanelStyles";
 import Grid from "@material-ui/core/Grid";
 import UsersTable from "./UsersTable";
 import { Pagination } from "@material-ui/lab";
+import AdminFilterContainer from "./AdminPanelFIlter/AdminFilterContainer";
 
 const AdminPanel = ({
   currentPage,
@@ -27,19 +28,22 @@ const AdminPanel = ({
 
   return (
     <Container maxWidth="lg" className={classes.container}>
-      <Grid container direction="column">
-        <Grid xs={12} md={12} item>
+      <Grid container direction="row" justify="center">
+        <Grid xs={8} md={8} item>
           <UsersTable users={users} setEditUser={setEditUser} />
         </Grid>
-      </Grid>
-      <Grid item>
-        <Pagination
-          shape="rounded"
-          variant="outlined"
-          color="primary"
-          count={pages.length}
-          onChange={onChangeCurrentPage}
-        />
+        <Grid item xs={4} md={4}>
+          <AdminFilterContainer />
+        </Grid>
+        <Grid xs={12} md={12} item>
+          <Pagination
+            shape="rounded"
+            variant="outlined"
+            color="primary"
+            count={pages.length}
+            onChange={onChangeCurrentPage}
+          />
+        </Grid>
       </Grid>
     </Container>
   );

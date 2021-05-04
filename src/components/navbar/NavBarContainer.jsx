@@ -9,6 +9,7 @@ const NavBarContainer = (props) => {
 
 let mstp = (state) => ({
   isMenuOpen: state.commonElements.isMenuOpen,
+  roles: state.profile.profile.roles,
 });
 
 export default connect(mstp, { setIsMenuOpen })(NavBarContainer);

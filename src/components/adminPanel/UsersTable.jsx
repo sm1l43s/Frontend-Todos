@@ -12,10 +12,17 @@ import TableCell from "@material-ui/core/TableCell";
 import { withStyles } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import EditUsersDataContainer from "./EditUsersDataContainer";
+import { makeStyles } from "@material-ui/core/styles";
 
 function createData(ordinal, user, roles) {
   return { ordinal, user, roles };
 }
+
+let useStyles = makeStyles((theme) => ({
+  smallIcon: {
+    fontSize: 16,
+  },
+}));
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -36,6 +43,8 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 const UsersTable = ({ users, setEditUser }) => {
+  const classes = useStyles();
+
   let rows = [];
 
   for (let i = 0; i < users.length; i++) {
@@ -89,7 +98,7 @@ const UsersTable = ({ users, setEditUser }) => {
               <StyledTableCell align="right">{row.user.email}</StyledTableCell>
               <StyledTableCell align="right">{row.user.status}</StyledTableCell>
               <StyledTableCell align="right">{row.roles}</StyledTableCell>
-              <StyledTableCell align="right">
+              <StyledTableCell align="center">
                 <NavLink to={"/dashboard/profile/" + row.user.id}>
                   <InfoOutlinedIcon />
                 </NavLink>
@@ -97,9 +106,8 @@ const UsersTable = ({ users, setEditUser }) => {
                   aria-label="edit"
                   onClick={handleClickOpen}
                   value={row.user.id}
-                  fontSize="small"
                 >
-                  <EditOutlinedIcon />
+                  <EditOutlinedIcon className={classes.smallIcon} />
                 </IconButton>
               </StyledTableCell>
             </StyledTableRow>

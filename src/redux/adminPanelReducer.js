@@ -9,6 +9,11 @@ import {
   UPDATE_USERS,
 } from "../constants/adminPanelConstants";
 import { getItemsByCriteria, updateDataObject } from "../utils/utils";
+import {
+  SET_ORDER_FIELDS,
+  SET_ORDER_TYPE,
+  SET_SEARCH_WORD,
+} from "../constants/userConstants";
 
 let initState = {
   totalCountUsers: 0,
@@ -25,6 +30,9 @@ let initState = {
   },
   editUser: {},
   isUpdated: false,
+  orderType: "asc",
+  orderFields: "id",
+  searchWord: "",
 };
 
 const adminPanelReducer = (state = initState, action) => {
@@ -82,6 +90,27 @@ const adminPanelReducer = (state = initState, action) => {
       return {
         ...state,
         isUpdated: action.isUpdated,
+      };
+    }
+
+    case SET_ORDER_TYPE: {
+      return {
+        ...state,
+        orderType: action.orderType,
+      };
+    }
+
+    case SET_ORDER_FIELDS: {
+      return {
+        ...state,
+        orderFields: action.orderFields,
+      };
+    }
+
+    case SET_SEARCH_WORD: {
+      return {
+        ...state,
+        searchWord: action.searchWord,
       };
     }
 

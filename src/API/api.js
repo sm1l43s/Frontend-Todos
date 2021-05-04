@@ -102,7 +102,6 @@ export const UsersAPI = {
       return { resultCode: 1 };
     }
   },
-
   async updateProfilePhoto(file) {
     try {
       let data = new FormData();
@@ -212,10 +211,10 @@ export const TaskAPI = {
 };
 
 export const AdminAPI = {
-  async getUsers(currentPage, size) {
+  async getUsers(currentPage, size, typeOrder, orderFields, searchWord) {
     try {
       const response = await instance.get(
-        `admin/users?page=${currentPage}&size=${size}`,
+        `admin/users?page=${currentPage}&size=${size}&typeOrder=${typeOrder}&orderFields=${orderFields}&search=${searchWord}`,
         {
           headers: {
             Authorization: localStorage.getItem("token"),
